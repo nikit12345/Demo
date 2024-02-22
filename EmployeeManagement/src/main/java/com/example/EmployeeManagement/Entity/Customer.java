@@ -32,15 +32,7 @@ public class Customer {
 	@Column(name="customer-mobile")
     private String mobile;
 
-	public Customer() {}
-	
-	public Customer(int customerid, String customername, String customeraddress, String mobile) {
-		super();
-		this.customerid = customerid;
-		this.customername = customername;
-		this.customeraddress = customeraddress;
-		this.mobile = mobile;
-	}
+
 
 	public int getCustomerid() {
 		return customerid;
