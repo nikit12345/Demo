@@ -23,5 +23,12 @@ public class GlobalExceptionHandler {
 	public ResponseEntity<?> handleExp(Exception ex){
 		return new ResponseEntity<>("Internal server Error",HttpStatus.INTERNAL_SERVER_ERROR);
 	}
+	
+	@ExceptionHandler(InvalidDataException.class)
+	@ResponseStatus(HttpStatus.NOT_FOUND)
+	@ResponseBody
+	public ResponseEntity<?> invalidDataException(InvalidDataException ex){
+		return new ResponseEntity<>(ex.getMessage(),HttpStatus.NOT_FOUND);
+	}
   
 }
